@@ -1,7 +1,7 @@
 // Refresh des decompte chaque seconde pour un changement en live
 
 $(document).ready(function(){
-    setInterval(ajaxcall, 100000);
+    setInterval(ajaxcall, 1000);
     ajaxcall();
 
     function ajaxcall(){
