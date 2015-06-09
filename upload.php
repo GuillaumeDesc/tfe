@@ -7,6 +7,13 @@ if($_FILES){
 	//print_r( $_FILES );
 	$document = new Upload( $_FILES['newfile'] );
 	if ($document->uploaded) {
+		//save uploaded img with 200px width 
+
+		$document->file_new_name_body = 'capsule';
+			$document->image_resize = true;
+			$document->image_x = 500;
+			$document->image_ratio_y = true;
+			$document->Process('caps/thumb/');
 
 		//save uploaded img @full resolution
 		$document->file_new_name_body = 'capsule';

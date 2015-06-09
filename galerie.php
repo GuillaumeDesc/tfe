@@ -26,7 +26,13 @@ if (!isset($_SESSION['login'])) {
                 <h1>TimeBridge</h1>
             </a> 
             
-            <?php include"nav_connecte.php"; ?></nav>
+            <?php include"nav_connecte.php"; ?> </nav>
+            
+            <a href="#" id="profil">
+                <img src="assets/1/profile.jpg" width="50" height="50" alt="photo de profil">
+                <p><?php echo htmlentities(trim($_SESSION['login'])); ?> ▾</p>
+            </a>
+            <?php echo '<a href="deconnection.php"> se déconnecter </a>'; ?>
         </header>
          <main id="afficaps">
             <h3>Votre capsule</h3>
@@ -46,12 +52,11 @@ if (!isset($_SESSION['login'])) {
             <ul id="galerie">
             
            <?php
-                //detection et affichage de tous les elements du dossier image
                 $img = 'caps/img';
                 $files =  scandir($img);
                 foreach($files as $f) {
                         if (($f != ".") && ($f != "..")) {
-                        echo  '<li ><a href="caps/img/' . $f . '" target="_blank" style="background: url(caps/img/' . $f . '); background-size:cover;">' . $f . '</a></li>';
+                        echo  '<li ><a href="caps/img/' . $f . '" target="_blank" style="background: url(caps/thumb/' . $f . '); background-size:cover;">' . $f . '</a></li>';
                     }
                 }
 			?>
