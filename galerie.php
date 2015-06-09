@@ -51,7 +51,7 @@ if (!isset($_SESSION['login'])) {
                 $files =  scandir($img);
                 foreach($files as $f) {
                         if (($f != ".") && ($f != "..")) {
-                        echo  '<li ><a href="caps/img/' . $f . '" target="_blank" style="background: url(caps/thumb/' . $f . '); background-size:cover;">' . $f . '</a></li>';
+                        echo  '<li ><a href="caps/img/' . $f . '" target="_blank" style="background: url(caps/img/' . $f . '); background-size:cover;">' . $f . '</a></li>';
                     }
                 }
 			?>
